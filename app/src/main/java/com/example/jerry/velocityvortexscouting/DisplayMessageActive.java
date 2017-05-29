@@ -14,7 +14,7 @@ public class DisplayMessageActive extends AppCompatActivity {
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
-        String message = intent.getStringExtra(HomeScreen.EXTRA_MESSAGE);
+        String message = intent.getStringExtra(TitleScreen.EXTRA_MESSAGE);
 
         // Capture the layout's TextView and set the string as its text
         TextView textView = (TextView) findViewById(R.id.textView);
