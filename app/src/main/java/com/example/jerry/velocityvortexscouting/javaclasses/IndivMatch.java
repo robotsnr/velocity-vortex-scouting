@@ -54,5 +54,36 @@ class IndivMatch {
         teleBeacons = tBeacons;
     }
 
+    //Setters
+    public void setTeamParticipating(Team s)
+    {
+        teamParticipating = s;
+    }
+
+    public void setIsRed(Boolean i)
+    {
+        isRed = i;
+    }
+
+    public void setIsCorner(Boolean i)
+    {
+        isCorner = i;
+    }
+
+    public void setMatchNum(int m)
+    {
+        matchNum = m;
+    }
+   /* int autoBallsCenter;
+    int autoBallsCorner;
+    Boolean autoCornerPark;
+    Boolean autoCenterPark;
+    int autoBeacons;
+    int teleBallsCenter;
+    int teleBallsCorner;
+    //0 is on the ground, 1 is high, 2 is capped
+    int capLevel;
+    int teleBeacons;*/
+    //Getters
 
 }
