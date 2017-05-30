@@ -1,14 +1,17 @@
-package com.example.jerry.velocityvortexscouting;
+package com.example.jerry.velocityvortexscouting.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
+
+import com.example.jerry.velocityvortexscouting.Activities.MakeNewCompetition;
+import com.example.jerry.velocityvortexscouting.R;
 
 public class TitleScreen extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,11 +19,9 @@ public class TitleScreen extends AppCompatActivity {
     }
 
     /** Called when the user taps the Send button */
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActive.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
+    public void startNewCompetition (View view) {
+        Intent intent = new Intent(this, MakeNewCompetition.class);
+
         startActivity(intent);
     }
 }

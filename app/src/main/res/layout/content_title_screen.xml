@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.jerry.velocityvortexscouting.TitleScreen"
+    tools:context="com.example.jerry.velocityvortexscouting.Activities.TitleScreen"
     tools:showIn="@layout/activity_title_screen">
 
 </android.support.constraint.ConstraintLayout>
