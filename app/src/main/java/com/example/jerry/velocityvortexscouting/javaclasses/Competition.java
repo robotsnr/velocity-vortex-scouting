@@ -12,9 +12,10 @@ public class Competition {
     private String competitionName;
     private ArrayList<Team> listTeams;
     private ArrayList<Match> listMatches;
+    private int numMatches;
 
     //Default constructor
-    Competition()
+    public Competition()
     {
         competitionName = "";
         listTeams = new ArrayList<Team>(0);
@@ -22,18 +23,20 @@ public class Competition {
     }
 
     //Constructor with name, teams and matches (used to open already finished competitions)
-    Competition(String competitionNameInput, ArrayList<Team> listTeamsInput, ArrayList<Match> listMatchesInput)
+    public Competition(String competitionNameInput, ArrayList<Team> listTeamsInput, ArrayList<Match> listMatchesInput)
     {
         competitionName = competitionNameInput;
         listTeams = listTeamsInput;
         listMatches = listMatchesInput;
+        numMatches = listMatchesInput.size();
     }
 
     //Constructor with name and number of matches (used to start new competition)
-    Competition(String competitionNameInput, int numMatches)
+    public Competition(String competitionNameInput, int num)
     {
         competitionName = competitionNameInput;
         listMatches = new ArrayList<Match>(numMatches);
+        numMatches = num;
     }
 
     //Setters
@@ -47,7 +50,7 @@ public class Competition {
     //Getter to get number of matches
     public int getNumMatches()
     {
-        return listMatches.size();
+        return numMatches;
     }
 
     //Get competition name
@@ -59,14 +62,14 @@ public class Competition {
     //General methods
     public void compileTeamList()
     {
-        ArrayList listOfTeams = new ArrayList<Team>(0);
+        ArrayList <Team> listOfTeams = new ArrayList<>(0);
         for (Match m : listMatches)
         {
             for(Team t : m.getTeamsInMatch())
             {
                 if(findTeamBinary(t,listOfTeams)==-1)
                 {
-                    listOfTeams.add(findTeamBinary(t,listOfTeams),t);
+                    listTeams.add(findTeamBinary(t,listOfTeams),t);
                 }
             }
         }

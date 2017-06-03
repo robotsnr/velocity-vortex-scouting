@@ -9,30 +9,30 @@ import java.lang.reflect.Array;
 class Match {
 
     //Instance variables
-    IndivMatch indivMatches[] = new IndivMatch[4];
-    Team teamsInMatch[] = new Team[4];
-    int matchNum;
+    private IndivMatch indivMatches[] = new IndivMatch[4];
+    private Team teamsInMatch[] = new Team[4];
+    private int matchNum;
 
     //Constructors
     //Default constructor
-    Match()
+    public Match()
     {
     }
 
     //Only matchNum
-    Match(int matchNumInput)
+    public Match(int matchNumInput)
     {
         matchNum = matchNumInput;
     }
 
     //MatchNum and indivMatches
-    Match(int matchNumInput, IndivMatch[] inputIndivMatches)
+    public Match(int matchNumInput, IndivMatch[] inputIndivMatches)
     {
         matchNum = matchNumInput;
         indivMatches = inputIndivMatches;
         for(int i = 0; i<teamsInMatch.length; i++)
         {
-            teamsInMatch[i] = indivMatches.getTeam();
+            teamsInMatch[i] = indivMatches[i].getTeamParticipating();
         }
     }
 

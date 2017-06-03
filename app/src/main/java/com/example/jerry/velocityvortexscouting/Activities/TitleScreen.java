@@ -7,10 +7,15 @@ import android.view.View;
 
 import com.example.jerry.velocityvortexscouting.Activities.MakeNewCompetition;
 import com.example.jerry.velocityvortexscouting.R;
+import com.example.jerry.velocityvortexscouting.javaclasses.Competition;
+
+import java.util.ArrayList;
 
 public class TitleScreen extends AppCompatActivity {
 
-    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+    public static int currentCompetitionIndex = -1;
+    public static ArrayList<Competition> competitions = new ArrayList<>();
+    public static Competition currentCompetition = new Competition();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +26,6 @@ public class TitleScreen extends AppCompatActivity {
     /** Called when the user taps the Send button */
     public void startNewCompetition (View view) {
         Intent intent = new Intent(this, MakeNewCompetition.class);
-
         startActivity(intent);
     }
 }

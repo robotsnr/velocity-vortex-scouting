@@ -10,33 +10,33 @@ import java.util.ArrayList;
 
 class Team implements Comparable<Team>{
 
-    String teamName;
-    final int teamNumber;
-    ArrayList<IndivMatch> teamPerformance;
+    private String teamName;
+    private final int teamNumber;
+    private ArrayList<IndivMatch> teamPerformance;
 
     //Constructors
     //Default
-    Team()
+    public Team()
     {
         teamName = "";
         teamNumber = -1;
     }
 
     //Only teamNumber
-    Team(int teamNumberInput)
+    public Team(int teamNumberInput)
     {
         teamNumber = teamNumberInput;
     }
 
     //Has teamName and teamNumber
-    Team(int teamNumberInput, String teamNameInput)
+    public Team(int teamNumberInput, String teamNameInput)
     {
         teamNumber = teamNumberInput;
         teamName = teamNameInput;
     }
 
     //Has teamName, teamNumber and teamPerformance
-    Team(int teamNumberInput, String teamNameInput, ArrayList<IndivMatch> teamPerformanceInput)
+    public Team(int teamNumberInput, String teamNameInput, ArrayList<IndivMatch> teamPerformanceInput)
     {
         teamNumber = teamNumberInput;
         teamName = teamNameInput;
