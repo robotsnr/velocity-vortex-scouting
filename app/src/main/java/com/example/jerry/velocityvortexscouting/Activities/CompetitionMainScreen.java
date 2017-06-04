@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
@@ -31,7 +33,6 @@ import static android.R.interpolator.linear;
 public class CompetitionMainScreen extends MakeNewCompetition {
 
 
-    //IndivMatch n = currentCompetition.getMatch(0).getIndivMatch(0);
     Button[] buttonsA = new Button[currentCompetition.getNumMatches()*4];
 
 
@@ -47,35 +48,15 @@ public class CompetitionMainScreen extends MakeNewCompetition {
         GridView gridView = (GridView)findViewById(R.id.gridview);
         final Adapter adapter = new Adapter(this, buttonsA);
         gridView.setAdapter(adapter);
-        //addButtons();
+
+        gridView.getLayoutParams().height = 80*currentCompetition.getNumMatches();
+
 
 
 
 
     }
 
-    public void addButtons()
-    {
-
-        TableLayout tableLayout = new TableLayout(this);
-
-        for (int i = 0; i < 3; i++) {
-
-            TableRow row = new TableRow(this);
-
-            for (int j = 0; j < 4; j++) {
-                Button btnTag = new Button(this);
-                btnTag.setLayoutParams(new Toolbar.LayoutParams(Toolbar.LayoutParams.WRAP_CONTENT, Toolbar.LayoutParams.WRAP_CONTENT));
-                btnTag.setText("Button " + (j + 1 + (i * 4)));
-                btnTag.setId(j + 1 + (i * 4));
-
-                row.addView(btnTag);
-
-            }
-
-            tableLayout.addView(row);
-        }
-    }
 
 
 
