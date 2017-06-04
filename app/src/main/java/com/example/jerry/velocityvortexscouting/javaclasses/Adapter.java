@@ -5,11 +5,14 @@ package com.example.jerry.velocityvortexscouting.javaclasses;
  */
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.jerry.velocityvortexscouting.R;
 
 public class Adapter extends BaseAdapter {
 
@@ -43,9 +46,24 @@ public class Adapter extends BaseAdapter {
     // 5
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        TextView dummyTextView = new TextView(mContext);
-        dummyTextView.setText(String.valueOf(position));
-        return dummyTextView;
+        // 1
+        final Button buttonNow = buttonsA[position];
+
+        // 2
+        if (convertView == null) {
+            final LayoutInflater layoutInflater = LayoutInflater.from(mContext);
+            convertView = layoutInflater.inflate(R.layout.linearlayout_button, null);
+        }
+
+        // 3
+        final Button buttonA = (Button)convertView.findViewById(R.id.buttonDisplay);
+        buttonA.setText("Match " + (position/4+1) + " " + (position%4));
+
+
+        // 4
+
+
+        return convertView;
     }
 
 }

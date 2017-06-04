@@ -6,7 +6,7 @@ import java.lang.reflect.Array;
  * Created by Jerry on 5/29/2017.
  */
 
-class Match {
+public class Match {
 
     //Instance variables
     private IndivMatch indivMatches[] = new IndivMatch[4];
@@ -52,6 +52,11 @@ class Match {
     //Gets the teams in match (array)
     public Team[] getTeamsInMatch(){
         return teamsInMatch;
+    }
+
+    public IndivMatch getIndivMatch(int i)
+    {
+        return indivMatches[i];
     }
 }
 

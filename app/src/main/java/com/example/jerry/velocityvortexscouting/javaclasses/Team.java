@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Created by Jerry on 5/29/2017.
  */
 
-class Team implements Comparable<Team>{
+public class Team implements Comparable<Team>{
 
     private String teamName;
     private final int teamNumber;

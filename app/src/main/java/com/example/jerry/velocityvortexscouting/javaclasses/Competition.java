@@ -59,6 +59,12 @@ public class Competition {
         return competitionName;
     }
 
+    //Get a match
+    public Match getMatch(int m)
+    {
+        return listMatches.get(m);
+    }
+
     //General methods
     public void compileTeamList()
     {

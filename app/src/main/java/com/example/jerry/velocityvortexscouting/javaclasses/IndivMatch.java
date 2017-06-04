@@ -4,7 +4,7 @@ package com.example.jerry.velocityvortexscouting.javaclasses;
  * Created by Jerry on 5/29/2017.
  */
 
-class IndivMatch {
+public class IndivMatch {
 
     //Remember these are individual contributions to the alliance
     private Team teamParticipating;
