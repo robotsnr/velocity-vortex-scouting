@@ -23,6 +23,8 @@ public class Match {
     public Match(int matchNumInput)
     {
         matchNum = matchNumInput;
+        for(int i = 1; i<=4; i++)
+            indivMatches[i-1] = new IndivMatch();
     }
 
     //MatchNum and indivMatches

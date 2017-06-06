@@ -1,6 +1,7 @@
 package com.example.jerry.velocityvortexscouting.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -30,7 +32,7 @@ import java.util.ArrayList;
 
 import static android.R.interpolator.linear;
 
-public class CompetitionMainScreen extends MakeNewCompetition {
+public class CompetitionMainScreen extends MakeNewCompetition{
 
 
     Button[] buttonsA = new Button[currentCompetition.getNumMatches()*4];
@@ -51,11 +53,16 @@ public class CompetitionMainScreen extends MakeNewCompetition {
 
         gridView.getLayoutParams().height = 80*currentCompetition.getNumMatches();
 
-
-
-
-
     }
+
+    public CharSequence onPressButton(View view)
+    {
+        Intent intent = new Intent(this, EditIndivMatch.class);
+        startActivity(intent);
+        return "asdf";
+    }
+
+
 
 
 

@@ -36,6 +36,8 @@ public class Competition {
     {
         competitionName = competitionNameInput;
         listMatches = new ArrayList<Match>(numMatches);
+        for(int i= 1; i<=numMatches; i++)
+           listMatches.add(new Match(i));
         numMatches = num;
     }
 

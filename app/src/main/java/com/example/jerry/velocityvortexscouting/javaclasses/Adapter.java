@@ -14,10 +14,11 @@ import android.widget.TextView;
 
 import com.example.jerry.velocityvortexscouting.R;
 
-public class Adapter extends BaseAdapter {
+public class Adapter extends BaseAdapter{
 
     private  Context mContext;
     private  Button[] buttonsA;
+    public Button currentButton;
 
     // 1
     public Adapter(Context context, Button[] b) {
@@ -47,7 +48,7 @@ public class Adapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // 1
-        final Button buttonNow = buttonsA[position];
+        currentButton = buttonsA[position];
 
         // 2
         if (convertView == null) {
@@ -56,8 +57,9 @@ public class Adapter extends BaseAdapter {
         }
 
         // 3
-        final Button buttonA = (Button)convertView.findViewById(R.id.buttonDisplay);
-        buttonA.setText("Match " + (position/4+1) + " " + (position%4));
+        currentButton = (Button)convertView.findViewById(R.id.buttonDisplay);
+        currentButton.setText("Match " + (position/4+1) + " " + (position%4));
+
 
 
         // 4
@@ -65,6 +67,12 @@ public class Adapter extends BaseAdapter {
 
         return convertView;
     }
+
+
+
+
+
+
 
 }
 
